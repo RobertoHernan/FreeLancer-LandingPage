@@ -8,11 +8,20 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 .titulo {
@@ -25,7 +34,7 @@ span {
 }
 
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 
 }
@@ -36,10 +45,19 @@ span {
 
 .navegacion-principal{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .navegacion-principal a {
+    display: block;
+    text-align: center;
     padding: 1rem;
     color: var(--blanco);
     text-decoration: none;
@@ -49,5 +67,49 @@ span {
 
 .navegacion-principal a:hover {
     background-color: var(--primario);
-    color: var(--oscuro);
+    color: var(--blanco);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.buton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 760px) {
+    .buton {
+        width: auto;
+    }
 }
