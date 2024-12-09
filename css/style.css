@@ -4,6 +4,7 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
 }
 
 html {
@@ -18,10 +19,20 @@ h1, h2, h3 {
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color:  var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
 .titulo {
@@ -36,7 +47,6 @@ span {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
-
 }
 
 .nav-bg {
@@ -76,6 +86,7 @@ span {
     background-size: cover;
     height: 400px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-hero {
